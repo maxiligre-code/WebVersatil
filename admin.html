@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - WebVersatil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="WebVersatil" class="logo-img">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="shop.html"><i class="fas fa-store"></i> Boutique</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Panier (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="account.html"><i class="fas fa-user"></i> Compte</a></li>
+                    <li><a href="auth.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin" id="admin-section" style="display: none;">
+            <div class="container">
+                <h1><i class="fas fa-cog"></i> Tableau de Bord Admin</h1>
+                <p>Ajoutez facilement de nouveaux produits à la boutique.</p>
+                <form id="admin-form">
+                    <div class="form-group">
+                        <label for="product-name"><i class="fas fa-tag"></i> Nom du Produit</label>
+                        <input type="text" id="product-name" placeholder="Ex: Forfait Enterprise" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price"><i class="fas fa-euro-sign"></i> Prix (€)</label>
+                        <input type="number" id="product-price" placeholder="2500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-desc"><i class="fas fa-align-left"></i> Description</label>
+                        <textarea id="product-desc" placeholder="Fonctionnalités avancées..."></textarea>
+                    </div>
+                    <button type="submit" id="add-product-btn" class="cta-button">Ajouter Produit</button>
+                </form>
+                <div id="json-output" style="display: none;" class="admin-output">
+                    <h3>JSON à Insérer dans products.json :</h3>
+                    <pre id="json-text"></pre>
+                    <p><strong>Action :</strong> Copiez, éditez products.json sur GitHub (ajoutez dans le tableau "products"), commit/push. Rechargez !</p>
+                </div>
+            </div>
+        </section>
+        <div id="admin-redirect" class="container">
+            <h2><i class="fas fa-exclamation-triangle"></i> Accès Refusé</h2>
+            <p>Seul l'administrateur peut accéder à cette page. <a href="auth.html">Connectez-vous</a> avec vos identifiants admin.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.png" alt="WebVersatil" class="footer-logo">
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="shop.html">Boutique</a></li>
+                        <li><a href="account.html">Mon Compte</a></li>
+                        <li><a href="auth.html">Connexion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@webversatil.com</p>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WebVersatil. Tous droits réservés. | <a href="#">Mentions Légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
