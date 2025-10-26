@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api'; // Change par ton URL Render en prod, ex: 'https://ton-backend.onrender.com/api'
+const API_BASE = 'http://localhost:5000/api'; // Change par ton URL Render : 'https://ton-backend.onrender.com/api'
 let currentUser = null;
 let cart = [];
 let token = localStorage.getItem('token');
