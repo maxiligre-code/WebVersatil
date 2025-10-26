@@ -8,10 +8,10 @@ const cartRoutes = require('./routes/cart');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI; // Remplace par ton URI Atlas
+const MONGODB_URI = process.env.MONGODB_URI; // URI Atlas
 
 // Middleware
-app.use(cors({ origin: '*' })); // Pour GitHub Pages ; restreins en prod
+app.use(cors({ origin: '*' })); // Change en prod : origin: 'https://tonusername.github.io'
 app.use(express.json());
 
 // Connexion DB
@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
 
-// Créer admin par défaut (run une fois)
+// Créer admin par défaut
 const createAdmin = async () => {
   const User = require('./models/User');
   const adminExists = await User.findOne({ email: 'admin@webversatil.com' });
